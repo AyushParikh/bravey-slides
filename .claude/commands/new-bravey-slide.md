@@ -25,6 +25,7 @@ Create a new 5-slide TikTok slideshow for Bravey following the established patte
 
 4. **Create `tiktok-slides-N.html`** using the same structure as existing files:
    - 405×720px slides, 5 slides total
+   - **Top padding must be at least `80px`** on every slide (TikTok overlays its UI at the top — `44px` gets cropped). Use `padding: 80px 36px 40px` on `.slide`.
    - Slide 0: Cover/hook — bold stat or number, punchy headline, subtitle, Bravey branding at bottom
    - Slides 1–3: Tip/point slides — metric or number label, rule title with accent em, divider, 2–3 bullet points with strong tags for emphasis, footer with `bravey.co` and `N / 3`
    - Slide 4: CTA — centered logo (`images/logo-white.png`), headline, "Try for free at bravey.co", `bravey-landing.png` screenshot
@@ -43,6 +44,7 @@ Create a new 5-slide TikTok slideshow for Bravey following the established patte
    This will create `tiktok-slides-N/slide-0.png` through `slide-4.png` at 1215×2160px (3×). Confirm all 5 files exist after it completes.
 
 ## Quality checklist
+- [ ] `.slide` has `padding-top` of at least `80px` (prevents TikTok UI from cropping top content)
 - [ ] Accent color is not reused from any prior slideshow
 - [ ] Font family is not reused (at least the display/headline font must be new)
 - [ ] Copy is punchy, specific, and credible — avoid generic filler
