@@ -12,6 +12,7 @@ const TOTAL_SLIDES = 5;
 const sets = [
   { file: 'tiktok-slides-2.html', folder: 'tiktok-slides-2' },
   { file: 'tiktok-slides-3.html', folder: 'tiktok-slides-3' },
+  { file: 'tiktok-slides-4.html', folder: 'tiktok-slides-4' },
 ];
 
 const browser = await puppeteer.launch({ headless: true });
