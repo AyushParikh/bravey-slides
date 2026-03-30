@@ -27,7 +27,7 @@ Create a new 5-slide TikTok slideshow for Bravey following the established patte
    - 405×720px slides, 5 slides total
    - **Top padding must be at least `80px`** on every slide (TikTok overlays its UI at the top — `44px` gets cropped). Use `padding: 80px 36px 40px` on `.slide`.
    - Slide 0: Cover/hook — bold stat or number, punchy headline, subtitle, Bravey branding at bottom
-   - Slides 1–3: Tip/point slides — metric or number label, rule title with accent em, divider, 2–3 bullet points with strong tags for emphasis, footer with `bravey.co` and `N / 3`
+   - Slides 1–3: Tip/point slides — metric or number label, rule title with accent em, divider, **max 2 bullet points per slide**, each bullet is **one short sentence only** (under 12 words). No walls of text. People scroll fast.
    - Slide 4: CTA — centered logo (`images/logo-white.png`), headline, "Try for free at bravey.co", `bravey-landing.png` screenshot
    - Navigation controls + keyboard arrows (copy JS block verbatim from existing files)
    - Noise texture overlay via SVG data URI on `.slide::before`
@@ -47,6 +47,7 @@ Create a new 5-slide TikTok slideshow for Bravey following the established patte
 - [ ] `.slide` has `padding-top` of at least `80px` (prevents TikTok UI from cropping top content)
 - [ ] Accent color is not reused from any prior slideshow
 - [ ] Font family is not reused (at least the display/headline font must be new)
+- [ ] Each tip slide has **at most 2 bullet points**, each a single short sentence (under 12 words)
 - [ ] Copy is punchy, specific, and credible — avoid generic filler
 - [ ] Strong tags used to emphasize key phrases, not just bold everything
 - [ ] CTA slide headline directly ties back to the slideshow topic

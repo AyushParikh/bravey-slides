@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bravey TikTok Slides 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #08060d;
+    --cream: #f3eeff;
+    --accent: #a855f7;
+    --accent-dim: rgba(168,85,247,0.1);
+    --accent-mid: rgba(168,85,247,0.22);
+    --accent-glow: rgba(168,85,247,0.35);
+    --muted: rgba(243,238,255,0.38);
+    --border: rgba(243,238,255,0.06);
+    --slide-w: 405px;
+    --slide-h: 720px;
+  }
+
+  body {
+    background: #060410;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    gap: 24px;
+    padding: 32px 16px;
+  }
+
+  .stage {
+    position: relative;
+    width: var(--slide-w);
+    height: var(--slide-h);
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: var(--slide-w);
+    height: var(--slide-h);
+    background: var(--bg);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 36px 40px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(18px) scale(0.97);
+    transition: opacity 0.45s cubic-bezier(.4,0,.2,1), transform 0.45s cubic-bezier(.4,0,.2,1);
+    border: 1px solid var(--border);
+  }
+
+  .slide.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+  }
+
+  .slide > * { position: relative; z-index: 2; }
+
+  /* noise */
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Cover ── */
+  #s0 .blob-1 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(168,85,247,0.22) 0%, transparent 70%);
+    top: -80px; right: -60px;
+  }
+  #s0 .blob-2 {
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(139,92,246,0.14) 0%, transparent 70%);
+    bottom: 60px; left: -50px;
+  }
+
+  #s0 .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: auto;
+  }
+
+  #s0 .big-stat {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 118px;
+    font-weight: 800;
+    line-height: 0.85;
+    color: var(--accent);
+    letter-spacing: -5px;
+    margin-bottom: 10px;
+  }
+
+  #s0 .cover-headline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 29px;
+    font-weight: 800;
+    color: var(--cream);
+    line-height: 1.15;
+    letter-spacing: -0.4px;
+    margin-bottom: 16px;
+  }
+
+  #s0 .cover-sub {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: auto;
+    max-width: 270px;
+  }
+
+  #s0 .brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+
+  #s0 .brand-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(243,238,255,0.25);
+  }
+
+  #s0 .brand-pill {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-mid);
+    border-radius: 100px;
+    padding: 3px 10px 3px 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+
+  #s0 .brand-pill::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px var(--accent-glow);
+  }
+
+  /* ── Tip slides ── */
+  .tip-slide .mistake-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .tip-slide .mistake-value {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 0.88;
+    letter-spacing: -3px;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+
+  .tip-slide .mistake-value em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .tip-slide .rule-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--muted);
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+    margin-bottom: 32px;
+  }
+
+  .tip-slide .rule-title strong {
+    color: var(--cream);
+    font-weight: 800;
+  }
+
+  .tip-slide .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 32px;
+  }
+
+  .tip-slide .points {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;
+  }
+
+  .tip-slide .point {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .tip-slide .point-marker {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    margin-top: 4px;
+    min-width: 14px;
+  }
+
+  .tip-slide .point-text {
+    font-size: 17px;
+    color: var(--cream);
+    line-height: 1.45;
+    font-weight: 400;
+  }
+
+  .tip-slide .point-text strong {
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .tip-slide .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+
+  .tip-slide .footer span {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(243,238,255,0.18);
+  }
+
+  /* ── CTA ── */
+  #s4 .blob-1 {
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(168,85,247,0.24) 0%, transparent 65%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ── Slide-specific blobs ── */
+  #s1 .blob-1 {
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(168,85,247,0.16) 0%, transparent 70%);
+    top: -60px; right: -40px;
+  }
+  #s2 .blob-1 {
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 70%);
+    bottom: 30px; left: -50px;
+  }
+  #s3 .blob-1 {
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(168,85,247,0.14) 0%, transparent 70%);
+    bottom: -60px; right: -60px;
+  }
+
+  /* ── Controls ── */
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .ctrl-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--cream);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    outline: none;
+  }
+
+  .ctrl-btn:hover { background: rgba(255,255,255,0.1); }
+  .ctrl-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+
+  .ctrl-btn svg {
+    width: 16px; height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .dots { display: flex; gap: 6px; align-items: center; }
+
+  .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(243,238,255,0.18);
+    transition: background 0.2s, width 0.2s;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    width: 20px;
+    border-radius: 3px;
+    background: var(--accent);
+  }
+
+  .hint {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(243,238,255,0.2);
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+
+  <!-- Cover -->
+  <div class="slide active" id="s0">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <span class="eyebrow">🎯 Cold outbound · 2026</span>
+
+    <div class="big-stat">68%</div>
+    <div class="cover-headline">Wrong person.<br/>Wrong email.</div>
+    <p class="cover-sub">Most outbound doesn't fail on copy. It fails on ICP. 🚫</p>
+
+    <div class="brand-row">
+      <span class="brand-name">bravey.co</span>
+      <span class="brand-pill">ICP</span>
+    </div>
+  </div>
+
+  <!-- Slide 1 -->
+  <div class="slide tip-slide" id="s1">
+    <div class="blob blob-1"></div>
+
+    <div class="mistake-label">🏢 Problem 01 / Definition</div>
+    <div class="mistake-value">Size<em> ≠</em><br/>Fit</div>
+    <div class="rule-title"><strong>Firmographics</strong> are not your ICP.</div>
+    <div class="divider"></div>
+
+    <div class="points">
+      <div class="point">
+        <span class="point-marker">😵</span>
+        <p class="point-text">"50–200 employees" describes <strong>10,000 companies.</strong></p>
+      </div>
+      <div class="point">
+        <span class="point-marker">✅</span>
+        <p class="point-text">Define by <strong>pain + urgency,</strong> not headcount.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>bravey.co</span>
+      <span>1 / 3</span>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide tip-slide" id="s2">
+    <div class="blob blob-1"></div>
+
+    <div class="mistake-label">⏱️ Problem 02 / Timing</div>
+    <div class="mistake-value">Who<em> &lt;</em><br/>When</div>
+    <div class="rule-title"><strong>Timing</strong> beats targeting.</div>
+    <div class="divider"></div>
+
+    <div class="points">
+      <div class="point">
+        <span class="point-marker">📡</span>
+        <p class="point-text">New hire, funding round, job post — <strong>these are buying signals.</strong></p>
+      </div>
+      <div class="point">
+        <span class="point-marker">📈</span>
+        <p class="point-text">Email within a week of a trigger: <strong>4× more replies.</strong></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>bravey.co</span>
+      <span>2 / 3</span>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide tip-slide" id="s3">
+    <div class="blob blob-1"></div>
+
+    <div class="mistake-label">🔬 Problem 03 / Validation</div>
+    <div class="mistake-value">Never<br/><em>tested.</em></div>
+    <div class="rule-title">Your ICP is a <strong>guess you never validated.</strong></div>
+    <div class="divider"></div>
+
+    <div class="points">
+      <div class="point">
+        <span class="point-marker">🗣️</span>
+        <p class="point-text">Ask your last 5 won deals: <strong>"Why did you say yes?"</strong></p>
+      </div>
+      <div class="point">
+        <span class="point-marker">🔁</span>
+        <p class="point-text"><strong>Re-validate every quarter.</strong> ICPs shift as you learn.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>bravey.co</span>
+      <span>3 / 3</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="slide" id="s4">
+    <div class="blob blob-1"></div>
+
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; padding-bottom:20px;">
+      <img src="images/logo-white.png" alt="Bravey" style="height:28px; object-fit:contain;" />
+      <div style="font-family:'DM Sans',sans-serif; font-size:42px; font-weight:800; line-height:0.95; letter-spacing:-1.5px; color:var(--cream);">
+        Target the right<br/>people and <span style="color:var(--accent);">convert.</span>
+      </div>
+      <p style="font-size:13px; color:var(--muted); line-height:1.6;">
+        Try for free at bravey.co
+      </p>
+    </div>
+
+    <div style="flex:1; display:flex; align-items:center; justify-content:center;">
+      <img src="bravey-landing.png" alt="Bravey" style="width:100%; border-radius:10px; border:1px solid var(--border); display:block;" />
+    </div>
+  </div>
+
+</div>
+
+<div class="controls">
+  <button class="ctrl-btn" id="prev" disabled>
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <div class="dots" id="dots">
+    <div class="dot active" data-i="0"></div>
+    <div class="dot" data-i="1"></div>
+    <div class="dot" data-i="2"></div>
+    <div class="dot" data-i="3"></div>
+    <div class="dot" data-i="4"></div>
+  </div>
+  <button class="ctrl-btn" id="next">
+    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</div>
+
+<span class="hint">← → arrow keys to navigate</span>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  let cur = 0;
+
+  function go(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = Math.max(0, Math.min(n, slides.length - 1));
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+    prev.disabled = cur === 0;
+    next.disabled = cur === slides.length - 1;
+  }
+
+  prev.addEventListener('click', () => go(cur - 1));
+  next.addEventListener('click', () => go(cur + 1));
+  dots.forEach(d => d.addEventListener('click', () => go(+d.dataset.i)));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') go(cur + 1);
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') go(cur - 1);
+  });
+</script>
+</body>
+</html>

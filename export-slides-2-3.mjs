@@ -15,6 +15,7 @@ const sets = [
   { file: 'tiktok-slides-4.html', folder: 'tiktok-slides-4' },
   { file: 'tiktok-slides-5.html', folder: 'tiktok-slides-5' },
   { file: 'tiktok-slides-6.html', folder: 'tiktok-slides-6' },
+  { file: 'tiktok-slides-7.html', folder: 'tiktok-slides-7' },
 ];
 
 const browser = await puppeteer.launch({ headless: true });

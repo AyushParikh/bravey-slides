@@ -12,12 +12,14 @@ bravey-slides/
 ├── tiktok-slides-4.html     # Slideshow 4: "3 numbers every founder ignores" (rose theme)
 ├── tiktok-slides-5.html     # Slideshow 5: "Why founders undercharge" (amber theme)
 ├── tiktok-slides-6.html     # Slideshow 6: "Why your cold emails get no replies" (cyan theme)
+├── tiktok-slides-7.html     # Slideshow 7: "Your ICP is costing you leads" (violet theme)
 ├── tiktok-slides/           # Exported PNGs for slideshow 1 (slide-0 to slide-4)
 ├── tiktok-slides-2/         # Exported PNGs for slideshow 2
 ├── tiktok-slides-3/         # Exported PNGs for slideshow 3
 ├── tiktok-slides-4/         # Exported PNGs for slideshow 4
 ├── tiktok-slides-5/         # Exported PNGs for slideshow 5
 ├── tiktok-slides-6/         # Exported PNGs for slideshow 6
+├── tiktok-slides-7/         # Exported PNGs for slideshow 7
 ├── bravey-landing.png       # Product screenshot used on CTA slides
 ├── export-slides.mjs        # Puppeteer script — exports slideshow 1
 └── export-slides-2-3.mjs    # Puppeteer script — exports slideshows 2, 3 & 4
@@ -38,6 +40,7 @@ Each slideshow is 5 slides (9:16, 405×720px, exported at 3× = 1215×2160):
 | tiktok-slides-4.html | Rose / Space Grotesk | 3 numbers every founder ignores (CAC, LTV:CAC, Churn) |
 | tiktok-slides-5.html | Amber / Plus Jakarta Sans | Why founders undercharge (cost-plus trap, WTP, anchoring) |
 | tiktok-slides-6.html | Cyan / Outfit | Why your cold emails get no replies (opener, offer, list) |
+| tiktok-slides-7.html | Violet / DM Sans | Your ICP is costing you leads (firmographics, triggers, validation) |
 
 ## Re-exporting PNGs
 
