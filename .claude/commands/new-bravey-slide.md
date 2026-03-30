@@ -6,19 +6,22 @@ Create a new 5-slide TikTok slideshow for Bravey following the established patte
 
 1. **Determine the next slide number** by checking which `tiktok-slides-N.html` files already exist. The new file should be `tiktok-slides-N.html` where N is one higher than the current max.
 
-2. **Choose a fresh topic** — must be business/founder/startup oriented. Topics already used:
+2. **Choose a fresh topic** — every topic must connect directly to **cold outbound, distribution, or getting leads/customers/users**. Bravey is a cold outbound distribution engine, so each slideshow should speak to founders trying to grow through outbound. Topics already used:
    - "90% of SaaS startups fail — 3 rules" (indigo)
    - "Why your startup isn't growing" (orange)
    - "How to get your first 100 customers" (green)
    - "3 numbers every founder ignores — CAC, LTV:CAC, Churn" (rose)
-   Pick something new and punchy that hasn't been covered.
+   - "Why founders undercharge" (amber)
+   Good territory: cold email tactics, ICP definition, lead list building, outbound sequences, reply rates, LinkedIn outreach, warm vs cold leads, pipeline hygiene, personalization at scale, booking demos, first-reply frameworks.
+   Pick something new, punchy, and directly actionable for a founder doing outbound.
 
 3. **Choose a unique theme** — each slideshow must have a visually distinct color + font combo. Themes already used:
    - Indigo `#818cf8` · Barlow Condensed · dark bg `#07070c`
    - Orange `#f97316` · Bebas Neue · dark bg `#0c0a09`
    - Green `#10b981` · Syne · dark bg `#05100d`
    - Rose `#f43f5e` · Space Grotesk · dark bg `#0c0509`
-   Pick a new accent color, Google Font pairing, and matching dark background. Good unused options: amber/yellow (Plus Jakarta Sans), cyan/teal (Outfit), violet/purple (Clash Display or Cabinet Grotesk), slate/cool-white (Inter or Epilogue).
+   - Amber `#f59e0b` · Plus Jakarta Sans · dark bg `#0c0900`
+   Pick a new accent color, Google Font pairing, and matching dark background. Good unused options: cyan/teal (Outfit), violet/purple (Clash Display or Cabinet Grotesk), slate/cool-white (Inter or Epilogue).
 
 4. **Create `tiktok-slides-N.html`** using the same structure as existing files:
    - 405×720px slides, 5 slides total
